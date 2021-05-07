@@ -19,7 +19,22 @@ def save(sert_dict, conf_file):
 
 
 def check_sert(file_name):
-    print(f'{file_name}')
+    # print(f'{file_name}')
+    date_not_before, date_not_after = ssl_check.get_ssl_dates(file_name)
+    res = f'{file_name}|{date_not_before}|{date_not_after}'
+    return res
+
+
+def all_sert():
+    res = ''
+    di = load(file_config)
+    for sert in di['files']:
+        res += check_sert(sert) + '\n'
+    return res
+
+
+def print_check_sert(file_name):
+    # print(f'{file_name}')
     date_not_before, date_not_after = ssl_check.get_ssl_dates(file_name)
     print(f'File {file_name}')
     print(f'Not before {date_not_before} \n')
@@ -29,7 +44,7 @@ def check_sert(file_name):
 def check_all_serts():
     di = load(file_config)
     for sert in di['files']:
-        check_sert(sert)
+        print_check_sert(sert)
 
 
 def add_sert(file_name):

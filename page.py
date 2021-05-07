@@ -1,5 +1,7 @@
+#!/usr/bin/python3
 from flask import Flask
 from ssl_check import get_ssl_dates
+import main
 
 app = Flask(__name__)
 
@@ -13,6 +15,11 @@ def certificates():
     return f'{file_name} {d1} {d2}'
 
 
-if __name__ == '__main__':
+@app.route('/all')
+def certificates():
+    res = main.all_sert()
+    return res
 
+
+if __name__ == '__main__':
     app.run()
