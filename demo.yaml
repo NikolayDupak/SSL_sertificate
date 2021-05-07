@@ -1,2 +1,2 @@
-files:
-- worker-0.pem
+files: [worker-0.pem, /var/lib/kubernetes/ca.pem, /var/lib/kubernetes/kubernetes.pem,
+  /var/lib/kubernetes/service-account.pem]

@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import argparse
 import os
 import yaml
@@ -8,7 +9,7 @@ file_config = "demo.yaml"
 
 def load(conf_file):
     with open(conf_file) as file:
-        sert_dict = yaml.load(file, Loader=yaml.FullLoader)
+        sert_dict = yaml.load(file)
     return sert_dict
 
 
@@ -18,6 +19,7 @@ def save(sert_dict, conf_file):
 
 
 def check_sert(file_name):
+    print(f'{file_name}')
     date_not_before, date_not_after = ssl_check.get_ssl_dates(file_name)
     print(f'File {file_name}')
     print(f'Not before {date_not_before} \n')
