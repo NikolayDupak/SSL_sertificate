@@ -4,7 +4,7 @@ import os
 import yaml
 import ssl_check
 
-file_config = "demo.yaml"
+file_config = "/usr/local/bin/ssl_check/demo.yaml"
 
 
 def load(conf_file):

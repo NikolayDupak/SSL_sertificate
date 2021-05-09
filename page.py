@@ -15,8 +15,8 @@ def certificates():
     return f'{file_name} {d1} {d2}'
 
 
-@app.route('/all')
-def certificates():
+@app.route('/all/')
+def all_certificates():
     res = main.all_sert()
     return res
 

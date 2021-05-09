@@ -1,0 +1,14 @@
+[Unit]
+Description=check ssl certificate
+Documentation=https://github.com/nikolaydupak/SSL_sertificate
+
+[Service]
+Type=notify
+ExecStart=/usr/local/bin/ssl_check/page.py
+
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+EOF
