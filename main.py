@@ -9,7 +9,7 @@ file_config = "/usr/local/bin/ssl_check/demo.yaml"
 
 def load(conf_file):
     with open(conf_file) as file:
-        sert_dict = yaml.load(file)
+        sert_dict = yaml.safe_load(file)
     return sert_dict
 
 
@@ -56,7 +56,8 @@ def add_sert(file_name):
 
 def remove_sert(remove_sert):
     di = load(file_config)
-    if di['files'].index(remove_sert) == -1:
+    if remove_sert not in di['files']:
+        print(f'{remove_sert} not in list')
         return
     print(f'Remove - {remove_sert}')
     di['files'].remove(remove_sert)

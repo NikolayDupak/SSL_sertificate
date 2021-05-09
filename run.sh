@@ -7,7 +7,7 @@ sudo cp ssl_check.py /usr/local/bin/ssl_check/
 sudo cp demo.yaml /usr/local/bin/ssl_check/
 sudo cp main.py /usr/local/bin/ssl_check/
 
-sudo ln -s /usr/local/bin/sslcheck /usr/local/bin/ssl_check/main.py
+sudo ln -s  /usr/local/bin/ssl_check/main.py /usr/local/bin/sslcheck
 sudo chmod +x /usr/local/bin/ssl_check/main.py
 sudo chmod +x /usr/local/bin/ssl_check/page.py
 sudo chmod +x /usr/local/bin/sslcheck
