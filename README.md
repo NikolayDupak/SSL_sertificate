@@ -14,6 +14,6 @@ For copying and start web page
 ./run.sh
 ```
 
-Page on [127.0.0.1:5000/all]()
+Page on [127.0.0.1:5000/metrics]()
 
 For check/add/remove has ```sslcheck``` use ```sslcheck --help``` for more information.

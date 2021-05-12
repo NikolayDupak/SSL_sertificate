@@ -12,7 +12,7 @@ def hello():
     return f'Hello'
 
 
-@app.route('/all/')
+@app.route('/metrics/')
 def all_certificates():
     res = main.all_sert()
     return res

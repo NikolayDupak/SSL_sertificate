@@ -3,6 +3,7 @@ import argparse
 import os
 import yaml
 import ssl_check
+import datetime
 
 file_config = "/usr/local/bin/ssl_check/demo.yaml"
 
@@ -20,8 +21,10 @@ def save(sert_dict, conf_file):
 
 def check_sert(file_name):
     # print(f'{file_name}')
+    # print format certificate_valid_seconds{file="/etc/kubernetes/cert2"} 1.6184e+05
     date_not_before, date_not_after = ssl_check.get_ssl_dates(file_name)
-    res = f'{file_name}|{date_not_before}|{date_not_after}'
+    left_time = date_not_after - datetime.datetime.now()
+    res = f'certificate_valid_seconds{{file={file_name}}} {left_time.seconds}'
     return res
 
 
