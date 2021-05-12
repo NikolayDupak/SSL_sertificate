@@ -24,7 +24,7 @@ def check_sert(file_name):
     # print format certificate_valid_seconds{file="/etc/kubernetes/cert2"} 1.6184e+05
     date_not_before, date_not_after = ssl_check.get_ssl_dates(file_name)
     left_time = date_not_after - datetime.datetime.now()
-    res = f'certificate_valid_seconds{{file={file_name}}} {left_time.seconds}'
+    res = f'certificate_valid_seconds{{file={file_name}}} {left_time.total_seconds()}'
     return res
 
 
